@@ -1,0 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.hover-putar {
+    transition: transform 0.5s ease-in-out;
+}
+.hover-putar:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.card-layanan img {
+    transition: transform 0.4s ease;
+}
+.card-layanan:hover img {
+    transform: scale(1.1);
+}
+
+@keyframes pulse-custom {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); background-color: #FBBF24; }
+}
+.anim-pulse-custom {
+    animation: pulse-custom 2s infinite;
+}
