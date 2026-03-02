@@ -19,7 +19,7 @@
                     <div class="ml-10 flex items-baseline space-x-4 text-sm font-medium">
                         <a href="#beranda" class="hover:bg-blue-800 px-3 py-2 rounded-md">Beranda</a>
                         <a href="#dashboard" class="hover:bg-blue-800 px-3 py-2 rounded-md text-yellow-300">Dashboard Mandor</a>
-                        <a href="#komisaris" class="hover:bg-blue-800 px-3 py-2 rounded-md">Dewan Komisaris</a>
+                        <a href="#komisaris" class="hover:bg-blue-800 px-3 py-2 rounded-md">Jajaran Petinggi</a>
                         <a href="#layanan" class="hover:bg-blue-800 px-3 py-2 rounded-md">Layanan</a>
                         <a href="#kalkulator" class="bg-yellow-500 text-blue-900 px-4 py-2 rounded-full font-bold ml-4 anim-pulse-custom">Kalkulator Cor</a>
                     </div>
@@ -31,12 +31,12 @@
     <section id="dashboard" class="bg-slate-800 text-white py-4 border-b-4 border-yellow-500">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm md:text-base gap-4">
             <div class="flex items-center space-x-2 bg-slate-700 px-4 py-2 rounded-lg justify-center w-full md:w-auto">
-                <span>🕒 Jam Proyek:</span>
+                <span>🕒 Jam Saat Ini:</span>
                 <span id="clock" class="font-bold text-yellow-400 font-mono text-lg">Memuat...</span>
             </div>
-            <div class="flex items-center space-x-2 bg-slate-700 px-4 py-2 rounded-lg justify-center w-full md:w-auto">
-                <span>🌤️ Cuaca Bekasi:</span>
-                <span class="font-bold text-sky-300">Cerah Berawan (Aman Buat Ngecor)</span>
+            <div class="flex items-center space-x-2 bg-slate-700 px-4 py-2 rounded-lg justify-center w-full md:w-auto overflow-hidden">
+                <span>🌤️ Info Cuaca:</span>
+                <span id="weather-ticker" class="font-bold text-sky-300 transition-opacity duration-500">Memuat data BMKG...</span>
             </div>
             <div class="flex items-center space-x-2 bg-slate-700 px-4 py-2 rounded-lg justify-center text-center w-full md:w-auto">
                 <span>🕌 Waktu Sholat:</span>
@@ -47,7 +47,7 @@
 
     <header id="beranda" class="bg-white py-16 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <img src="foto-direktur.png" alt="Bapak Cardani" class="w-48 h-48 object-cover rounded-full mx-auto shadow-2xl border-4 border-blue-900 mb-6 hover-putar">
+            <img src="foto-direktur.png" alt="Bapak Cardani" class="w-64 h-80 object-cover rounded-2xl mx-auto shadow-2xl border-4 border-blue-900 mb-6 transition-transform duration-500 hover:scale-105">
             <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Bapak Cardani</h1>
             <p class="text-xl text-yellow-600 font-bold mb-6">Direktur Utama PT Cardani Konstruksi Utama</p>
             <h2 class="text-2xl md:text-3xl font-bold text-gray-700 mb-4 italic">
@@ -58,12 +58,13 @@
 
     <section id="komisaris" class="py-16 bg-gray-100 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Dewan Pengawas Utama</h2>
-            <div class="flex flex-col md:flex-row justify-center gap-12">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Jajaran Direksi & Dewan Komisaris</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
                 
-                <div class="bg-white rounded-xl shadow-xl p-8 max-w-sm text-center border-t-8 border-blue-900 hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+                <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-sm text-center border-t-8 border-blue-900 hover:-translate-y-2 transition duration-300 flex flex-col items-center">
                     <img src="komut.png" alt="Ir. Monang" class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-yellow-500 shadow-md">
-                    <h3 class="text-xl font-bold text-gray-800 mb-1">Ir. Monang, S.T., M.T., IPM., ASEAN Eng.</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Ir. Monang, S.T., M.T., IPM.</h3>
                     <p class="text-yellow-600 font-bold mb-4">Komisaris Utama</p>
                     <p class="text-gray-600 text-sm mb-5 leading-relaxed">
                         Mantan direktur dengan insting setajam elang. Pengawas anggaran paling ketat, pantang ada selisih di RAB proyek maupun dana operasional armada truk logistik yang luput dari pantauannya. 
@@ -71,14 +72,14 @@
                     <div class="text-left w-full bg-blue-50 p-4 rounded-lg border border-blue-100 mt-auto">
                         <p class="text-xs font-extrabold text-blue-900 mb-2 uppercase tracking-wide">Sertifikasi Profesional:</p>
                         <ul class="text-xs text-gray-700 list-disc ml-4 space-y-1 font-medium">
-                            <li>Certified Internal Auditor Proyek Konstruksi (CIAPK)</li>
-                            <li>Ahli Utama Manajemen Armada & Logistik Proyek</li>
-                            <li>Sertifikasi Pengawas Mutu Beton Standar Internasional</li>
+                            <li>Certified Internal Auditor Konstruksi (CIAPK)</li>
+                            <li>Ahli Utama Manajemen Armada Logistik</li>
+                            <li>Pengawas Mutu Beton Standar Internasional</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-xl p-8 max-w-sm text-center border-t-8 border-yellow-500 hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+                <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-sm text-center border-t-8 border-yellow-500 hover:-translate-y-2 transition duration-300 flex flex-col items-center">
                     <img src="komk3.png" alt="Ir. Wawan" class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-blue-900 shadow-md">
                     <h3 class="text-xl font-bold text-gray-800 mb-1">Ir. Wawan, S.T., M.T., CSP., CHSE.</h3>
                     <p class="text-blue-600 font-bold mb-4">Komisaris (Fokus K3)</p>
@@ -90,6 +91,23 @@
                         <ul class="text-xs text-gray-700 list-disc ml-4 space-y-1 font-medium">
                             <li>Ahli K3 Umum & Spesialis Medis Lapangan</li>
                             <li>Sertifikat Ahli Teknik Sipil Anti-Runtuh</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-xl p-8 w-full max-w-sm text-center border-t-8 border-green-600 hover:-translate-y-2 transition duration-300 flex flex-col items-center">
+                    <img src="dirkeu.png" alt="Joshua Sinaga" class="w-32 h-32 object-cover rounded-full mb-4 border-4 border-green-600 shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-1">Joshua Sinaga, S.E., M.M., Ak., CA., CRA.</h3>
+                    <p class="text-green-600 font-bold mb-4">Direktur Keuangan & Operasi</p>
+                    <p class="text-gray-600 text-sm mb-5 leading-relaxed">
+                        Pawang *cash flow* perusahaan. Memastikan tagihan proyek cair tepat waktu, laporan keuangan bersih dari temuan audit, dan paling jago menawar harga sewa *excavator* sampai *supplier* menangis.
+                    </p>
+                    <div class="text-left w-full bg-green-50 p-4 rounded-lg border border-green-100 mt-auto">
+                        <p class="text-xs font-extrabold text-green-800 mb-2 uppercase tracking-wide">Sertifikasi Keuangan:</p>
+                        <ul class="text-xs text-gray-700 list-disc ml-4 space-y-1 font-medium">
+                            <li>Ahli Manajemen Arus Kas Konstruksi</li>
+                            <li>Certified Risk Auditor (CRA)</li>
+                            <li>Spesialis Negosiasi & Efisiensi Anggaran</li>
                         </ul>
                     </div>
                 </div>
@@ -144,7 +162,7 @@
                 </button>
                 
                 <div id="hasilCor" class="mt-6 p-6 bg-gray-50 rounded-lg border border-dashed border-gray-400 text-gray-700 hidden">
-                    </div>
+                </div>
             </div>
         </div>
     </section>

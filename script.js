@@ -1,4 +1,4 @@
-// --- Fitur Jam Real-Time untuk Dashboard ---
+// --- Fitur Jam Real-Time ---
 function updateClock() {
     const clockElement = document.getElementById('clock');
     if (clockElement) {
@@ -13,30 +13,51 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 
+// --- Fitur Ticker Cuaca Jabodetabek ---
+const dataCuaca = [
+    "Jakarta: Cerah Berawan 33°C (Siap Kirim Material)",
+    "Bogor: Hujan Ringan 25°C (Awas Semen Basah)",
+    "Depok: Berawan 30°C (Cocok Buat Pasang Bata)",
+    "Tangerang: Cerah Panas 34°C (Semangat Kuli!)",
+    "Bekasi: Panas Cetar 35°C (Gass Ngecor!)"
+];
+let indeksCuaca = 0;
+
+function rotasiCuaca() {
+    const weatherElement = document.getElementById('weather-ticker');
+    if (weatherElement) {
+        // Beri efek transisi teks (opsional, dibantu CSS di HTML)
+        weatherElement.style.opacity = 0; 
+        setTimeout(() => {
+            weatherElement.textContent = dataCuaca[indeksCuaca];
+            weatherElement.style.opacity = 1;
+            indeksCuaca = (indeksCuaca + 1) % dataCuaca.length;
+        }, 300); // ganti teks saat opacity 0
+    }
+}
+
+// Panggil pertama kali, lalu set interval tiap 3.5 detik
+rotasiCuaca();
+setInterval(rotasiCuaca, 3500);
+
+
 // --- Fitur Kalkulator Cor Beton (Real Calculation) ---
 document.getElementById('btnHitung').addEventListener('click', function() {
-    // Ambil nilai dari input form
     let p = parseFloat(document.getElementById('panjang').value);
     let l = parseFloat(document.getElementById('lebar').value);
-    let t = parseFloat(document.getElementById('tebal').value) / 100; // Konversi cm ke meter
+    let t = parseFloat(document.getElementById('tebal').value) / 100;
 
     let hasilDiv = document.getElementById('hasilCor');
 
     if(p > 0 && l > 0 && t > 0) {
-        // Menghitung Volume Beton (m3)
         let volume = p * l * t; 
-        
-        // Estimasi Kebutuhan Material (Rasio Campuran 1:2:3 / Mutu Beton Pendekatan K-175 s/d K-225)
-        // Standar: 1 m3 beton butuh ~7 sak semen (50kg), 0.5 m3 pasir, 0.8 m3 batu split
         let semen = Math.ceil(volume * 7); 
         let pasir = (volume * 0.5).toFixed(2); 
         let split = (volume * 0.8).toFixed(2); 
         
-        // Kalkulasi Logistik (Kapasitas truk engkel/pick-up bak +/- 3 hingga 4 m3 per ritase)
-        let totalMaterial Alam = parseFloat(pasir) + parseFloat(split);
+        let totalMaterialAlam = parseFloat(pasir) + parseFloat(split);
         let ritase = Math.ceil(totalMaterialAlam / 3.5);
 
-        // Tampilkan Hasil
         hasilDiv.classList.remove('hidden');
         hasilDiv.innerHTML = `
             <div class="text-left">
