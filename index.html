@@ -4,334 +4,296 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PT Cardani Konstruksi Utama</title>
-    <meta name="description" content="PT Cardani Konstruksi Utama — Kualitas Tanpa Kompromi, Membangun Sepenuh Hati. Sipil & pengaspalan, konstruksi gedung, dan instalasi listrik.">
-    <meta name="theme-color" content="#0f0e0c">
+    <meta name="description" content="PT Cardani Konstruksi Utama — Kualitas Tanpa Kompromi, Membangun Sepenuh Hati. Kontraktor sipil, gedung, dan kelistrikan sejak 1987.">
+    <meta name="theme-color" content="#15181c">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preload" as="image" href="foto-direktur.jpg">
+    <link rel="preload" as="image" href="konstruksi.jpg">
     <link rel="stylesheet" href="style.css">
-    <script>
-        (function (d) {
-            d.classList.add('js');
-            try { if (sessionStorage.getItem('cardani-intro')) d.classList.add('no-loader'); } catch (e) {}
-            setTimeout(function () { d.classList.add('is-ready'); }, 3000);
-        })(document.documentElement);
-    </script>
+    <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-        <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M17 7l1.4-1.4"/><path d="M8.5 11a4 4 0 0 1 7.6-1.2A3.5 3.5 0 1 1 17 17H8a3 3 0 0 1 .5-6z"/></symbol>
-        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
-        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-        <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></symbol>
-        <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></symbol>
-        <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h4l4 3.5V16h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
-        <symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3L4 21M16 3l4 18M12 4v3M12 10.5v3M12 17v3"/></symbol>
-        <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 8h8v13M2 21h20"/><path d="M7.5 8h1M7.5 12h1M7.5 16h1M15.5 12h1M15.5 16h1"/></symbol>
-        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
-        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-        <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
-        <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h11L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
-        <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.5"/></symbol>
-        <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
-    </svg>
-
-    <!-- Preloader -->
-    <div class="loader" id="loader" aria-hidden="true">
-        <div class="loader__inner">
-            <span class="loader__word">Cardani</span>
-            <span class="loader__line"><i id="loaderBar"></i></span>
-            <span class="loader__meta"><span>PT Cardani Konstruksi Utama</span><span id="loaderCount">000</span></span>
-        </div>
-    </div>
-
-    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
-
-    <!-- NAVIGASI -->
-    <nav class="nav" id="nav">
-        <div class="wrap nav__inner">
-            <a href="#beranda" class="brand" aria-label="PT Cardani Konstruksi Utama, ke beranda">
-                <span class="brand__mark" aria-hidden="true">C</span>
-                <span class="brand__text">PT CARDANI <b>KONSTRUKSI</b></span>
-            </a>
-            <div class="nav__links" id="navLinks">
-                <a href="#beranda" data-spy="beranda">Beranda</a>
-                <a href="#dashboard" data-spy="dashboard">Dashboard Mandor</a>
-                <a href="#petinggi" data-spy="petinggi">Jajaran Petinggi</a>
-                <a href="#layanan" data-spy="layanan">Layanan</a>
-                <a href="#katalog" data-spy="katalog">Katalog</a>
-                <span class="nav__pill" aria-hidden="true"></span>
-            </div>
-            <a href="#kalkulator" class="btn btn--outline btn--sm nav__cta" data-spy="kalkulator" data-magnetic>Kalkulator Cor<svg class="ico"><use href="#i-arrow-ne"/></svg></a>
-            <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="sheet">
-                <span></span><span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Menu HP -->
-    <div class="sheet" id="sheet" aria-hidden="true">
-        <div class="sheet__backdrop" data-close></div>
-        <div class="sheet__panel" role="dialog" aria-label="Menu navigasi">
-            <a href="#beranda" data-spy="beranda"><span>01</span>Beranda</a>
-            <a href="#dashboard" data-spy="dashboard"><span>02</span>Dashboard Mandor</a>
-            <a href="#petinggi" data-spy="petinggi"><span>03</span>Jajaran Petinggi</a>
-            <a href="#layanan" data-spy="layanan"><span>04</span>Layanan</a>
-            <a href="#kalkulator" data-spy="kalkulator"><span>05</span>Kalkulator Cor &amp; Proyek</a>
-            <a href="#katalog" data-spy="katalog"><span>06</span>Katalog Material</a>
-        </div>
-    </div>
+<body data-page="beranda">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-cloud" viewBox="0 0 24 24"><path d="M12 3v2M5.6 5.6l1.4 1.4M3 12h2M17 7l1.4-1.4"/><path d="M8.5 11a4 4 0 0 1 7.6-1.2A3.5 3.5 0 1 1 17 17H8a3 3 0 0 1 .5-6z"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol><symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/></symbol><symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 10h4l4 3.5V16h-8"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol><symbol id="i-road" viewBox="0 0 24 24"><path d="M8 3L4 21M16 3l4 18M12 4v3M12 10.5v3M12 17v3"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 8h8v13M2 21h20"/><path d="M7.5 8h1M7.5 12h1M7.5 16h1M15.5 12h1M15.5 16h1"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol><symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h11L21 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.6 3.2-6 6.5-6s6 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.3c2 .8 3.3 2.8 3.5 5.7"/></symbol><symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.6-8-10.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.5C20 15.4 12 20 12 20z"/><path d="M7 12h3l1.5-2 2 4 1.5-2h2"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5"/></symbol><symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="3"/><path d="M3 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7"/><path d="M9 15v2c0 1.7 2.7 3 6 3s6-1.3 6-3v-5c0-1.7-2.7-3-6-3"/></symbol><symbol id="i-food" viewBox="0 0 24 24"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 3v18M17 3c-2 2-3 5-3 8h3v10"/></symbol><symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-helmet" viewBox="0 0 24 24"><path d="M3 17h18M5 17a7 7 0 0 1 14 0"/><path d="M12 10V6M9 7.5V10M15 7.5V10"/></symbol><symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol></svg>
 
     <!-- DASHBOARD MANDOR -->
-    <section id="dashboard" class="dash theme-dark">
-        <div class="wrap dash__grid">
-            <div class="chip">
-                <svg class="ico"><use href="#i-clock"/></svg>
-                <span class="chip__label">Jam Saat Ini</span>
-                <span id="clock" class="chip__val chip__val--mono">Memuat...</span>
+    <div class="topbar" id="dashboard">
+        <div class="container topbar__inner">
+            <div class="topbar__info" aria-label="Dashboard Mandor">
+                <div class="tb-item"><svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg><span>Jam Saat Ini:</span><b id="clock">Memuat...</b></div>
+                <div class="tb-item"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg><span>Waktu Sholat:</span><b>Dzuhur 12:05 | Ashar 15:10</b></div>
+                <div class="tb-item tb-item--weather"><svg class="ico" aria-hidden="true"><use href="#i-cloud"/></svg><span>Info Cuaca:</span><span class="tb-ticker"><b id="weather-ticker">Memuat data BMKG...</b></span></div>
             </div>
-            <div class="chip chip--weather">
-                <svg class="ico"><use href="#i-cloud"/></svg>
-                <span class="chip__label">Info Cuaca</span>
-                <span class="ticker"><span id="weather-ticker" class="chip__val">Memuat data BMKG...</span></span>
-            </div>
-            <div class="chip">
-                <svg class="ico"><use href="#i-moon"/></svg>
-                <span class="chip__label">Waktu Sholat</span>
-                <span class="chip__val">Dzuhur 12:05 | Ashar 15:10</span>
+            <div class="topbar__links">
+                <a href="karir.html">Karir</a><a href="proyek.html">Proyek</a><a href="kontak.html">Kontak</a><span>ID | EN</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- HERO -->
-    <header id="beranda" class="hero theme-dark">
-        <div class="wrap hero__grid">
-            <div class="hero__head">
-                <p class="label" data-intro="1"><span class="idx">(01)</span> PT Cardani Konstruksi Utama</p>
-                <h1 class="hero__title" data-split>Bapak <em>Cardani</em></h1>
-            </div>
-
-            <figure class="hero__media" data-intro="2">
-                <div class="hero__frame" id="heroFrame">
-                    <img src="foto-direktur.jpg" alt="Bapak Cardani" width="463" height="1000" fetchpriority="high">
-                </div>
-                <figcaption><span>Bapak Cardani</span><span>Direktur Utama</span></figcaption>
-            </figure>
-
-            <div class="hero__body">
-                <p class="hero__role" data-intro="3">Direktur Utama PT Cardani Konstruksi Utama</p>
-                <h2 class="hero__quote" data-intro="4">“Kualitas Tanpa Kompromi, Membangun Sepenuh Hati.”</h2>
-                <div class="hero__actions" data-intro="5">
-                    <a href="#kalkulator" class="btn btn--bronze" data-magnetic>Hitung Cor Sekarang<svg class="ico"><use href="#i-arrow"/></svg></a>
-                    <a href="#petinggi" class="btn btn--ghost" data-magnetic>Jajaran Petinggi</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="wrap hero__foot" data-intro="6">
-            <a href="#layanan"><span>01</span>Sipil &amp; Pengaspalan</a>
-            <a href="#layanan"><span>02</span>Konstruksi Gedung</a>
-            <a href="#layanan"><span>03</span>Instalasi Listrik</a>
-            <span class="hero__scroll" aria-hidden="true"><i></i>Scroll</span>
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="PT Cardani Konstruksi Utama, ke beranda">PT CARDANI <span>KONSTRUKSI</span></a>
+            <nav class="nav" aria-label="Navigasi utama"><a href="index.html" aria-current="page">Beranda</a><a href="tentang.html">Tentang Kami</a><a href="tentang.html#manajemen">Jajaran Petinggi</a><a href="index.html#layanan">Layanan</a><a href="proyek.html">Proyek</a><a href="karir.html">Karir</a><a href="kontak.html">Kontak</a></nav>
+            <a href="alat.html#kalkulator" class="btn btn--primary btn--sm header__cta anim-pulse-custom"><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>Kalkulator Cor</a>
+            <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
         </div>
     </header>
 
-    <div class="marquee theme-dark" aria-hidden="true">
-        <div class="marquee__track">
-            <span>Kualitas Tanpa Kompromi</span><b>✦</b><span>Membangun Sepenuh Hati</span><b>✦</b><span>Terpercaya Membangun Negeri</span><b>✦</b>
-            <span>Kualitas Tanpa Kompromi</span><b>✦</b><span>Membangun Sepenuh Hati</span><b>✦</b><span>Terpercaya Membangun Negeri</span><b>✦</b>
+    <div class="drawer" id="drawer" aria-hidden="true">
+        <div class="drawer__backdrop" data-close></div>
+        <div class="drawer__panel" role="dialog" aria-label="Menu navigasi">
+            <div class="drawer__head"><a href="index.html" class="logo" aria-label="PT Cardani Konstruksi Utama, ke beranda">PT CARDANI <span>KONSTRUKSI</span></a><button class="drawer__close" data-close aria-label="Tutup menu"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+            <nav class="drawer__nav"><a href="index.html" aria-current="page">Beranda<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="tentang.html">Tentang Kami<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="tentang.html#manajemen">Jajaran Petinggi<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="index.html#layanan">Layanan<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="proyek.html">Proyek<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="karir.html">Karir<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="kontak.html">Kontak<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a><a href="alat.html#katalog">Katalog Material<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a></nav>
+            <div class="drawer__foot">
+                <a href="alat.html#kalkulator" class="btn btn--primary"><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>Kalkulator Cor</a>
+                <span><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> (021) 8888-1987 · info@cardani.co.id</span>
+            </div>
         </div>
     </div>
 
-    <!-- PETINGGI -->
-    <section id="petinggi" class="section theme-light">
-        <div class="wrap">
-            <div class="sec-head" data-reveal>
-                <p class="label"><span class="idx">(02)</span> Jajaran Petinggi</p>
-                <h2 class="sec-title" data-split>Dewan Komisaris <em>(Pengawas)</em></h2>
-            </div>
-
-            <div class="people">
-                <article class="person" data-reveal>
-                    <figure class="person__photo" data-clip>
-                        <img src="komut.jpg" alt="Ir. Monang" loading="lazy" width="750" height="1000">
-                        <span class="person__no">K—01</span>
-                    </figure>
-                    <div class="person__body">
-                        <p class="person__role">Komisaris Utama</p>
-                        <h3 class="person__name">Ir. Monang, S.T., M.T., IPM.</h3>
-                        <p class="person__bio">Mantan direktur dengan insting setajam elang. Pengawas anggaran paling ketat, pantang ada selisih di RAB proyek maupun dana operasional armada logistik yang luput dari pantauannya.</p>
-                        <div class="certs">
-                            <p class="certs__title">Sertifikasi Profesional:</p>
-                            <ul>
-                                <li><span>01</span>Certified Internal Auditor Konstruksi (CIAPK)</li>
-                                <li><span>02</span>Ahli Utama Manajemen Evaluasi Proyek</li>
-                                <li><span>03</span>Pengawas Mutu Beton Standar Internasional</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="person" data-reveal>
-                    <figure class="person__photo" data-clip>
-                        <img src="komk3.jpg" alt="Ir. Wawan" loading="lazy" width="843" height="1000">
-                        <span class="person__no">K—02</span>
-                    </figure>
-                    <div class="person__body">
-                        <p class="person__role">Komisaris (Fokus K3)</p>
-                        <h3 class="person__name">Ir. Wawan, S.T., M.T., CSP., CHSE.</h3>
-                        <p class="person__bio">Berwibawa dalam menjaga keselamatan lapangan. Sangat paham standar medis dan kesehatan kerja, memastikan tensi para kuli dan <em>engineer</em> tetap stabil walaupun pusing kejar <em>deadline</em>.</p>
-                        <div class="certs">
-                            <p class="certs__title">Sertifikasi Teknik:</p>
-                            <ul>
-                                <li><span>01</span>Ahli K3 Umum &amp; Spesialis Medis Lapangan</li>
-                                <li><span>02</span>Sertifikat Ahli Teknik Sipil Anti-Runtuh</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="sec-head sec-head--gap" data-reveal>
-                <p class="label"><span class="idx">(03)</span> Jajaran Petinggi</p>
-                <h2 class="sec-title" data-split>Jajaran Direksi <em>(Eksekutif)</em></h2>
-            </div>
-
-            <div class="people">
-                <article class="person" data-reveal>
-                    <figure class="person__photo" data-clip>
-                        <img src="dirkeu.jpg" alt="Joshua Sinaga" loading="lazy" width="747" height="1000">
-                        <span class="person__no">D—01</span>
-                    </figure>
-                    <div class="person__body">
-                        <p class="person__role">Direktur Keuangan &amp; Operasi</p>
-                        <h3 class="person__name">Joshua Sinaga, S.E., M.M., Ak., CA.</h3>
-                        <p class="person__bio">Pawang <em>cash flow</em> perusahaan. Memastikan tagihan proyek cair tepat waktu, laporan bersih dari temuan audit, dan paling jago menawar harga <em>supplier</em> sampai mereka menangis pasrah.</p>
-                        <div class="certs">
-                            <p class="certs__title">Sertifikasi Keuangan:</p>
-                            <ul>
-                                <li><span>01</span>Ahli Manajemen Arus Kas Konstruksi</li>
-                                <li><span>02</span>Certified Risk Auditor (CRA)</li>
-                                <li><span>03</span>Spesialis Negosiasi Anggaran Ketat</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="person" data-reveal>
-                    <figure class="person__photo" data-clip>
-                        <img src="dirlog.jpg" alt="Sidik ST" loading="lazy" width="747" height="1000">
-                        <span class="person__no">D—02</span>
-                    </figure>
-                    <div class="person__body">
-                        <p class="person__role">Direktur Logistik &amp; Armada</p>
-                        <h3 class="person__name">Sidik, S.T., M.Log., CPLM.</h3>
-                        <p class="person__bio">Panglima jalanan yang mengurus segala pergerakan material. Sangat piawai mengatur ritase pengiriman via Lalamove, memastikan armada truk terus narik, dan pantang pulang sebelum target cuan bersih Rp 100.000 - 150.000 per hari tercapai!</p>
-                        <div class="certs">
-                            <p class="certs__title">Sertifikasi Logistik:</p>
-                            <ul>
-                                <li><span>01</span>Certified Lalamove Fleet Manager (CLFM)</li>
-                                <li><span>02</span>Ahli Optimalisasi Rute &amp; Ritase Harian</li>
-                                <li><span>03</span>Spesialis Perawatan As Roda Truk Berat</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
+    <main id="beranda">
+    <section class="hero">
+        <div class="hero__bg"><img src="konstruksi.jpg" alt="" fetchpriority="high"></div>
+        <div class="container hero__inner">
+            <p class="overline" data-intro style="--i:0">PT Cardani Konstruksi Utama · Sejak 1987</p>
+            <h1 data-intro style="--i:1">Membangun Negeri dengan <span>Kualitas Tanpa Kompromi.</span></h1>
+            <p class="lead" data-intro style="--i:2">Kontraktor umum untuk sipil &amp; pengaspalan, konstruksi gedung, dan instalasi listrik di Jabodetabek. Tepat mutu, tepat waktu, tepat RAB.</p>
+            <div class="hero__actions" data-intro style="--i:3">
+                <a href="proyek.html" class="btn btn--primary">Lihat Proyek Kami<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a href="alat.html#kalkulator" class="btn btn--light"><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>Hitung Estimasi Cor</a>
             </div>
         </div>
     </section>
 
-    <!-- LAYANAN -->
-    <section id="layanan" class="section theme-dark">
-        <div class="wrap">
-            <div class="sec-head" data-reveal>
-                <p class="label"><span class="idx">(04)</span> Layanan</p>
-                <h2 class="sec-title" data-split>Layanan Utama <em>Kami</em></h2>
-            </div>
-            <div class="services" id="services">
-                <article class="service" data-reveal>
-                    <div class="service__img" data-clip><img src="aspal.jpg" alt="Aspal" loading="lazy" width="1000" height="667" data-parallax></div>
-                    <div class="service__meta">
-                        <span class="service__num">01</span>
-                        <h3>Sipil &amp; Pengaspalan</h3>
-                        <svg class="ico service__arrow"><use href="#i-arrow-ne"/></svg>
-                    </div>
-                </article>
-                <article class="service" data-reveal>
-                    <div class="service__img" data-clip><img src="konstruksi.jpg" alt="Konstruksi" loading="lazy" width="1000" height="667" data-parallax></div>
-                    <div class="service__meta">
-                        <span class="service__num">02</span>
-                        <h3>Konstruksi Gedung</h3>
-                        <svg class="ico service__arrow"><use href="#i-arrow-ne"/></svg>
-                    </div>
-                </article>
-                <article class="service" data-reveal>
-                    <div class="service__img" data-clip><img src="kelistrikan.jpg" alt="Kelistrikan" loading="lazy" width="1000" height="666" data-parallax></div>
-                    <div class="service__meta">
-                        <span class="service__num">03</span>
-                        <h3>Instalasi Listrik</h3>
-                        <svg class="ico service__arrow"><use href="#i-arrow-ne"/></svg>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+    <div class="container stats-band"><div class="stats-grid" data-reveal><div class="stat-box"><strong><span data-count="39" data-dec="0">0</span><small></small></strong><span>Tahun Membangun Negeri</span></div><div class="stat-box"><strong><span data-count="412" data-dec="0">0</span><small>+</small></strong><span>Proyek Telah Diselesaikan</span></div><div class="stat-box"><strong><span data-count="2450" data-dec="0">0</span><small></small></strong><span>Tenaga Kerja Terampil</span></div><div class="stat-box"><strong><span data-count="5.2" data-dec="1">0</span><small>jt</small></strong><span>Jam Kerja Tanpa Kecelakaan</span></div></div></div>
 
-    <!-- KALKULATOR -->
-    <section id="kalkulator" class="section theme-light">
-        <div class="wrap">
-            <div class="sec-head" data-reveal>
-                <p class="label"><span class="idx">(05)</span> Kalkulator Proyek</p>
-                <h2 class="sec-title" data-split>Kalkulator Estimasi <em>Cor Dak Beton</em> &amp; Proyek</h2>
-                <p class="sec-sub">Hitungan valid material (Rasio 1:2:3) untuk pengecoran plat lantai/jalan, plus sembilan kalkulator bangunan lain. Setiap hasil langsung dikonversi ke estimasi biaya material.</p>
+    <section class="section" id="sambutan">
+        <div class="container director">
+            <div class="director__media" data-reveal="left">
+                <div class="director__photo"><img src="foto-direktur.jpg" alt="Bapak Cardani" loading="lazy"></div>
+                <div class="director__badge"><b>Bapak Cardani</b><span>Direktur Utama</span></div>
             </div>
-            <div class="calc" data-reveal>
-                <div class="tabs" id="calcTabs" role="tablist" aria-label="Pilih kalkulator"></div>
-                <div class="calc__panel" id="calcPanel" role="tabpanel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- KATALOG -->
-    <section id="katalog" class="section theme-dark">
-        <div class="wrap">
-            <div class="sec-head" data-reveal>
-                <p class="label"><span class="idx">(06)</span> Katalog Material</p>
-                <h2 class="sec-title" data-split>Katalog &amp; Harga <em>Material</em></h2>
-                <p class="sec-sub">Estimasi harga pasar Jabodetabek 2026. Harga bisa berbeda per toko &amp; waktu, gunakan sebagai patokan awal.</p>
-            </div>
-            <div class="filters" id="catFilters" data-reveal></div>
-            <div class="catalog" id="catalog"></div>
-            <div class="cart" id="cart" data-reveal>
-                <div class="cart__head">
-                    <h3>Ringkasan Estimasi Belanja</h3>
-                    <button class="link-btn" id="cartReset" type="button">Kosongkan</button>
+            <div data-reveal="right">
+                <p class="overline">Sambutan Direktur Utama</p>
+                <h2 class="h-section">Bapak Cardani</h2>
+                <p class="person__role" style="margin-top:8px">Direktur Utama PT Cardani Konstruksi Utama</p>
+                <blockquote class="director__quote">Kualitas Tanpa Kompromi, Membangun Sepenuh Hati.</blockquote>
+                <p class="body">Sejak memulai dari satu truk engkel di Bekasi pada 1987, kami percaya bahwa bangunan yang baik lahir dari perhitungan yang jujur, pekerja yang selamat, dan material yang benar-benar dipasang sesuai RAB. Prinsip itu yang terus kami pegang di setiap proyek — kecil maupun besar.</p>
+                <div class="director__sign">
+                    <div><b>Bapak Cardani</b><span>Direktur Utama</span></div>
+                    <a href="tentang.html#sejarah" class="link-arrow" style="margin-left:auto">Sejarah Kami<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 </div>
-                <div id="cartBody"></div>
             </div>
         </div>
-        <a href="#cart" class="cart-pill" id="cartPill" aria-label="Lihat ringkasan belanja">
-            <span class="cart-pill__count" id="cartCount">0</span>
-            <span id="cartPillTotal">Rp 0</span>
-        </a>
     </section>
 
-    <footer class="footer theme-dark">
-        <div class="wrap">
-            <div class="footer__top">
-                <p class="footer__tag">Terpercaya<br><em>Membangun Negeri.</em></p>
-                <nav class="footer__nav" aria-label="Navigasi footer">
-                    <a href="#petinggi">Jajaran Petinggi</a>
-                    <a href="#layanan">Layanan</a>
-                    <a href="#kalkulator">Kalkulator</a>
-                    <a href="#katalog">Katalog</a>
-                </nav>
-                <a href="#beranda" class="footer__up" aria-label="Kembali ke atas"><svg class="ico"><use href="#i-up"/></svg></a>
+    <section class="section section--gray" id="layanan">
+        <div class="container">
+            <div class="sec-head sec-head--row" data-reveal>
+                <div><p class="overline">Layanan</p><h2 class="h-section">Layanan Utama Kami</h2></div>
+                <a href="kontak.html" class="link-arrow">Konsultasi Proyek<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-            <div class="footer__word" aria-hidden="true">Cardani</div>
-            <p class="footer__copy">&copy; 2026 PT Cardani Konstruksi Utama. Terpercaya Membangun Negeri.</p>
+            <div class="services">
+                <article class="service" data-reveal>
+                    <div class="service__img"><img src="aspal.jpg" alt="Aspal" loading="lazy"></div>
+                    <div class="service__body">
+                        <span class="service__icon"><svg class="ico" aria-hidden="true"><use href="#i-road"/></svg></span>
+                        <h3>Sipil &amp; Pengaspalan</h3>
+                        <p>Pembangunan dan peningkatan jalan, betonisasi, drainase, serta pekerjaan tanah untuk kawasan industri dan pemerintah daerah.</p>
+                        <ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Pengaspalan hotmix &amp; penetrasi</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Rigid pavement (beton)</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Drainase &amp; saluran</li></ul>
+                    </div>
+                </article>
+                <article class="service" data-reveal>
+                    <div class="service__img"><img src="konstruksi.jpg" alt="Konstruksi" loading="lazy"></div>
+                    <div class="service__body">
+                        <span class="service__icon"><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg></span>
+                        <h3>Konstruksi Gedung</h3>
+                        <p>Gedung perkantoran, gudang, rusunawa, dan fasilitas industri — dari pondasi sampai serah terima kunci.</p>
+                        <ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Struktur beton bertulang</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Gudang &amp; bangunan baja</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Renovasi &amp; perluasan</li></ul>
+                    </div>
+                </article>
+                <article class="service" data-reveal>
+                    <div class="service__img"><img src="kelistrikan.jpg" alt="Kelistrikan" loading="lazy"></div>
+                    <div class="service__body">
+                        <span class="service__icon"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg></span>
+                        <h3>Instalasi Listrik</h3>
+                        <p>Instalasi mekanikal-elektrikal untuk perumahan, gudang, dan pabrik dengan standar keselamatan PUIL.</p>
+                        <ul><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Panel &amp; distribusi daya</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Penerangan &amp; jaringan</li><li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Pemeliharaan berkala</li></ul>
+                    </div>
+                </article></div>
+        </div>
+    </section>
+
+    <!-- BAGIAN SIGNATURE: CARDANI TOWER -->
+    <section class="build" id="bangun" aria-labelledby="build-title">
+        <div class="build__sticky">
+            <div class="container build__grid">
+                <div class="build__copy">
+                    <p class="overline">Cara Kami Bekerja</p>
+                    <h2 class="h-section" id="build-title">Scroll untuk membangun <span>Cardani Tower.</span></h2>
+                    <div class="build__phase"><span class="build__dot"></span><b id="buildPhase">Persiapan Lahan</b></div>
+                    <div class="build__meter" aria-hidden="true"><span id="buildBar"></span></div>
+                    <dl class="build__stats">
+                        <div><dt>Lantai</dt><dd><b id="bFloor">0</b>/8</dd></div>
+                        <div><dt>Hari</dt><dd><b id="bDay">0</b></dd></div>
+                        <div><dt>Semen</dt><dd><b id="bSemen">0</b> sak</dd></div>
+                        <div><dt>Ritase</dt><dd><b id="bRit">0</b> rit</dd></div>
+                    </dl>
+                    <p class="build__note">Simulasi proyek gedung 8 lantai: tepat mutu, tepat waktu, tepat RAB — dan nol kecelakaan kerja.</p>
+                </div>
+                <div class="build__stage" id="buildStage"><svg class="tower" viewBox="0 0 400 380" role="img" aria-label="Ilustrasi pembangunan Cardani Tower">
+        <defs>
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="rgba(255,255,255,.06)"/></pattern>
+            <pattern id="lattice" width="10" height="12" patternUnits="userSpaceOnUse"><path d="M0 0L10 12M10 0L0 12" stroke="#ffb81c" stroke-width="1.4"/></pattern>
+        </defs>
+        <rect width="400" height="380" fill="url(#grid)"/>
+        <rect x="0" y="342" width="400" height="38" class="ground"/>
+        <g class="fnd"><rect x="104" y="330" width="192" height="12" class="foundation"/></g>
+        <g class="fl" data-fl="0"><rect x="118" y="300" width="164" height="30" class="slab"/><rect x="118" y="300" width="164" height="4" class="beam"/><rect x="128" y="308" width="18" height="14" rx="1" class="win"/><rect x="158" y="308" width="18" height="14" rx="1" class="win"/><rect x="188" y="308" width="18" height="14" rx="1" class="win"/><rect x="218" y="308" width="18" height="14" rx="1" class="win"/><rect x="248" y="308" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="1"><rect x="118" y="270" width="164" height="30" class="slab"/><rect x="118" y="270" width="164" height="4" class="beam"/><rect x="128" y="278" width="18" height="14" rx="1" class="win"/><rect x="158" y="278" width="18" height="14" rx="1" class="win"/><rect x="188" y="278" width="18" height="14" rx="1" class="win"/><rect x="218" y="278" width="18" height="14" rx="1" class="win"/><rect x="248" y="278" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="2"><rect x="118" y="240" width="164" height="30" class="slab"/><rect x="118" y="240" width="164" height="4" class="beam"/><rect x="128" y="248" width="18" height="14" rx="1" class="win"/><rect x="158" y="248" width="18" height="14" rx="1" class="win"/><rect x="188" y="248" width="18" height="14" rx="1" class="win"/><rect x="218" y="248" width="18" height="14" rx="1" class="win"/><rect x="248" y="248" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="3"><rect x="118" y="210" width="164" height="30" class="slab"/><rect x="118" y="210" width="164" height="4" class="beam"/><rect x="128" y="218" width="18" height="14" rx="1" class="win"/><rect x="158" y="218" width="18" height="14" rx="1" class="win"/><rect x="188" y="218" width="18" height="14" rx="1" class="win"/><rect x="218" y="218" width="18" height="14" rx="1" class="win"/><rect x="248" y="218" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="4"><rect x="118" y="180" width="164" height="30" class="slab"/><rect x="118" y="180" width="164" height="4" class="beam"/><rect x="128" y="188" width="18" height="14" rx="1" class="win"/><rect x="158" y="188" width="18" height="14" rx="1" class="win"/><rect x="188" y="188" width="18" height="14" rx="1" class="win"/><rect x="218" y="188" width="18" height="14" rx="1" class="win"/><rect x="248" y="188" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="5"><rect x="118" y="150" width="164" height="30" class="slab"/><rect x="118" y="150" width="164" height="4" class="beam"/><rect x="128" y="158" width="18" height="14" rx="1" class="win"/><rect x="158" y="158" width="18" height="14" rx="1" class="win"/><rect x="188" y="158" width="18" height="14" rx="1" class="win"/><rect x="218" y="158" width="18" height="14" rx="1" class="win"/><rect x="248" y="158" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="6"><rect x="118" y="120" width="164" height="30" class="slab"/><rect x="118" y="120" width="164" height="4" class="beam"/><rect x="128" y="128" width="18" height="14" rx="1" class="win"/><rect x="158" y="128" width="18" height="14" rx="1" class="win"/><rect x="188" y="128" width="18" height="14" rx="1" class="win"/><rect x="218" y="128" width="18" height="14" rx="1" class="win"/><rect x="248" y="128" width="18" height="14" rx="1" class="win"/></g><g class="fl" data-fl="7"><rect x="118" y="90" width="164" height="30" class="slab"/><rect x="118" y="90" width="164" height="4" class="beam"/><rect x="128" y="98" width="18" height="14" rx="1" class="win"/><rect x="158" y="98" width="18" height="14" rx="1" class="win"/><rect x="188" y="98" width="18" height="14" rx="1" class="win"/><rect x="218" y="98" width="18" height="14" rx="1" class="win"/><rect x="248" y="98" width="18" height="14" rx="1" class="win"/></g>
+        <g class="roof"><rect x="150" y="76" width="100" height="14" class="slab"/><path d="M200 76V46" stroke="#c9cfd6" stroke-width="2"/><path d="M200 46h26l-6 6 6 6h-26z" fill="#ffb81c"/><text x="200" y="87" text-anchor="middle" class="roof-txt">CARDANI</text></g>
+        <g class="crane">
+            <rect x="318" y="40" width="12" height="302" fill="url(#lattice)" stroke="#ffb81c" stroke-width="1.5"/>
+            <rect x="310" y="28" width="28" height="14" fill="#ffb81c"/>
+            <g class="jib">
+                <path d="M150 34H370" stroke="#ffb81c" stroke-width="5"/>
+                <path d="M150 34L324 14 370 34" fill="none" stroke="#ffb81c" stroke-width="1.5"/>
+                <rect x="350" y="36" width="22" height="18" fill="#5a626e"/>
+                <g class="trolley">
+                    <rect x="-8" y="34" width="16" height="7" fill="#e9ebee"/>
+                    <rect class="cable" x="-1" y="41" width="2" height="100" fill="#c9cfd6"/>
+                    <g class="load"><rect x="-26" y="0" width="52" height="8" fill="#9aa3ad"/><path d="M-20 0l20-10 20 10" fill="none" stroke="#c9cfd6" stroke-width="1.2"/></g>
+                </g>
+            </g>
+        </g>
+        <g class="mixer"><rect x="0" y="318" width="44" height="18" rx="2" fill="#ffb81c"/><rect x="44" y="322" width="18" height="14" rx="2" fill="#e9ebee"/><ellipse class="drum" cx="20" cy="316" rx="18" ry="11" fill="#c9cfd6"/><circle cx="12" cy="338" r="5" fill="#0e1013"/><circle cx="52" cy="338" r="5" fill="#0e1013"/></g>
+        <g class="stamp"><circle cx="200" cy="200" r="58" fill="none" stroke="#1f9d55" stroke-width="5"/><circle cx="200" cy="200" r="48" fill="none" stroke="#1f9d55" stroke-width="1.5"/><text x="200" y="194" text-anchor="middle" class="stamp-t1">SERAH TERIMA</text><text x="200" y="214" text-anchor="middle" class="stamp-t2">TEPAT WAKTU ✓</text></g>
+    </svg></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="proyek">
+        <div class="container">
+            <div class="sec-head sec-head--row" data-reveal>
+                <div><p class="overline">Portofolio</p><h2 class="h-section">Proyek Unggulan</h2></div>
+                <a href="proyek.html" class="link-arrow">Semua Proyek<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="projects">
+                <article class="project" data-cat="jalan" data-reveal>
+                    <div class="project__img"><img src="aspal.jpg" alt="Peningkatan Jalan Ruas Cikarang–Cibitung" loading="lazy" style="object-position:50% 50%"><span class="project__cat">Jalan & Sipil</span><span class="badge badge--done project__status">Selesai</span></div>
+                    <div class="project__body">
+                        <h3>Peningkatan Jalan Ruas Cikarang–Cibitung</h3>
+                        
+                        <div class="project__meta">
+                            <div><span>Lokasi</span><b>Kab. Bekasi</b></div>
+                            <div><span>Tahun</span><b>2025</b></div>
+                            <div><span>Nilai Kontrak</span><b>Rp 48,7 M</b></div>
+                            <div><span>Pemberi Kerja</span><b>Pemerintah Daerah</b></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="project" data-cat="gedung" data-reveal>
+                    <div class="project__img"><img src="konstruksi.jpg" alt="Rusunawa Pekerja Industri Karawang" loading="lazy" style="object-position:20% 70%"><span class="project__cat">Gedung</span><span class="badge badge--run project__status">Berjalan</span></div>
+                    <div class="project__body">
+                        <h3>Rusunawa Pekerja Industri Karawang</h3>
+                        <div class="progress-line"><div class="progress-line__head"><span>Progres fisik</span><span>68%</span></div><div class="progress-line__track"><div class="progress-line__bar" style="--p:0.68"></div></div></div>
+                        <div class="project__meta">
+                            <div><span>Lokasi</span><b>Kab. Karawang</b></div>
+                            <div><span>Tahun</span><b>2026</b></div>
+                            <div><span>Nilai Kontrak</span><b>Rp 72,5 M</b></div>
+                            <div><span>Pemberi Kerja</span><b>Swasta</b></div>
+                        </div>
+                    </div>
+                </article>
+                <article class="project" data-cat="listrik" data-reveal>
+                    <div class="project__img"><img src="kelistrikan.jpg" alt="Instalasi ME Gudang Logistik Tangerang" loading="lazy" style="object-position:50% 50%"><span class="project__cat">Kelistrikan</span><span class="badge badge--done project__status">Selesai</span></div>
+                    <div class="project__body">
+                        <h3>Instalasi ME Gudang Logistik Tangerang</h3>
+                        
+                        <div class="project__meta">
+                            <div><span>Lokasi</span><b>Kab. Tangerang</b></div>
+                            <div><span>Tahun</span><b>2024</b></div>
+                            <div><span>Nilai Kontrak</span><b>Rp 12,4 M</b></div>
+                            <div><span>Pemberi Kerja</span><b>Swasta</b></div>
+                        </div>
+                    </div>
+                </article></div>
+        </div>
+    </section>
+
+    <section class="section section--gray" id="sertifikasi">
+        <div class="container">
+            <div class="sec-head" data-reveal><p class="overline">Standar &amp; Legalitas</p><h2 class="h-section">Tersertifikasi &amp; Terpercaya</h2></div>
+            <div class="certs-strip"><div class="cert" data-reveal><div class="cert__seal">ISO<br>9001</div><b>ISO 9001:2015</b><span>Sistem Manajemen Mutu</span></div><div class="cert" data-reveal><div class="cert__seal">ISO<br>14001</div><b>ISO 14001:2015</b><span>Manajemen Lingkungan</span></div><div class="cert" data-reveal><div class="cert__seal">ISO<br>45001</div><b>ISO 45001:2018</b><span>Keselamatan &amp; Kesehatan Kerja</span></div><div class="cert" data-reveal><div class="cert__seal">SMK3</div><b>SMK3 Bendera Emas</b><span>Kemnaker RI</span></div><div class="cert" data-reveal><div class="cert__seal">SBU</div><b>SBU Kualifikasi Besar</b><span>Konstruksi Gedung &amp; Sipil</span></div><div class="cert" data-reveal><div class="cert__seal">ANTI<br>RUNTUH</div><b>Ahli Teknik Sipil Anti-Runtuh</b><span>Diawasi langsung Ir. Wawan</span></div></div>
+        </div>
+    </section>
+
+    <section class="section" id="berita">
+        <div class="container">
+            <div class="sec-head sec-head--row" data-reveal>
+                <div><p class="overline">Kabar Terbaru</p><h2 class="h-section">Berita &amp; Siaran Pers</h2></div>
+            </div>
+            <div class="news">
+                <article class="news-card" data-reveal>
+                    <div class="news-card__meta"><b>Korporasi</b><span>12 Nov 2026</span></div>
+                    <h3>PT Cardani Luncurkan 10 Kalkulator Bangunan Gratis untuk Mitra</h3>
+                    <p>Mulai dari cor dak hingga RAB rumah, kini pelanggan bisa menghitung kebutuhan material langsung dari situs resmi.</p>
+                    <a href="alat.html" class="link-arrow">Selengkapnya<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </article>
+                <article class="news-card" data-reveal>
+                    <div class="news-card__meta"><b>K3</b><span>28 Okt 2026</span></div>
+                    <h3>Tembus 5,2 Juta Jam Kerja Tanpa Kecelakaan, Tensi Pekerja Tetap Stabil</h3>
+                    <p>Program cek tensi pagi yang digagas Ir. Wawan terbukti menjaga semangat dan keselamatan seluruh pekerja lapangan.</p>
+                    <a href="tentang.html#sertifikasi" class="link-arrow">Selengkapnya<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </article>
+                <article class="news-card" data-reveal>
+                    <div class="news-card__meta"><b>Proyek</b><span>03 Okt 2026</span></div>
+                    <h3>Progres Rusunawa Karawang Capai 68%, Cor Lantai 6 Selesai Lebih Cepat</h3>
+                    <p>Berkat pengaturan ritase armada yang rapi, pengecoran lantai 6 rampung dua hari lebih cepat dari jadwal.</p>
+                    <a href="proyek.html" class="link-arrow">Selengkapnya<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                </article></div>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container cta-band__inner" data-reveal>
+            <div><h2>Punya rencana ngecor atau bangun gedung?</h2><p>Hitung estimasi material dan biaya dalam hitungan detik, lalu konsultasikan dengan tim kami.</p></div>
+            <div class="cta-band__actions"><a href="alat.html#kalkulator" class="btn btn--dark"><svg class="ico" aria-hidden="true"><use href="#i-ruler"/></svg>Buka Kalkulator</a><a href="kontak.html" class="btn btn--outline">Hubungi Kami</a></div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__top">
+            <div class="footer__about">
+                <a href="index.html" class="logo" aria-label="PT Cardani Konstruksi Utama, ke beranda">PT CARDANI <span>KONSTRUKSI</span></a>
+                <p>Kontraktor umum sipil, gedung, dan kelistrikan sejak 1987. Membangun dengan kualitas tanpa kompromi dan sepenuh hati.</p>
+                <div class="footer__social" aria-label="Media sosial">
+                    <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="TikTok">TT</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Perusahaan</h4>
+                <ul><li><a href="tentang.html#sejarah">Sejarah</a></li><li><a href="tentang.html#visi-misi">Visi &amp; Misi</a></li><li><a href="tentang.html#manajemen">Jajaran Petinggi</a></li><li><a href="tentang.html#sertifikasi">Sertifikasi</a></li></ul>
+            </div>
+            <div class="footer__col">
+                <h4>Layanan</h4>
+                <ul><li><a href="index.html#layanan">Sipil &amp; Pengaspalan</a></li><li><a href="index.html#layanan">Konstruksi Gedung</a></li><li><a href="index.html#layanan">Instalasi Listrik</a></li><li><a href="alat.html">Kalkulator &amp; Katalog</a></li></ul>
+            </div>
+            <div class="footer__col">
+                <h4>Informasi</h4>
+                <ul><li><a href="proyek.html">Proyek</a></li><li><a href="index.html#berita">Berita</a></li><li><a href="karir.html">Karir</a></li><li><a href="kontak.html">Kontak</a></li></ul>
+            </div>
+            <div class="footer__col footer__contact">
+                <h4>Kantor Pusat</h4>
+                <ul>
+                    <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span>Cardani Tower Lt. 8, Jl. Raya Cor Beton No. 123, Bekasi, Jawa Barat 17111</span></li>
+                    <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span>(021) 8888-1987</span></li>
+                    <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span>info@cardani.co.id</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer__bottom">
+            <p>&copy; 2026 PT Cardani Konstruksi Utama. Terpercaya Membangun Negeri.</p>
+            <div class="footer__legal"><a href="#">Kebijakan Privasi</a><a href="#">Syarat &amp; Ketentuan</a><a href="#">Whistleblowing System</a></div>
         </div>
     </footer>
 
