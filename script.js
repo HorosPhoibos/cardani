@@ -51,8 +51,45 @@ function rotasiCuaca() {
 rotasiCuaca();
 setInterval(rotasiCuaca, 3500);
 
-/* ---------- Intro halaman ---------- */
-requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('is-ready')));
+/* ---------- Teks per kata (untuk animasi mask) ---------- */
+$$('[data-split]').forEach((el) => {
+    let i = 0;
+    (function walk(node) {
+        Array.from(node.childNodes).forEach((n) => {
+            if (n.nodeType === 3) {
+                const parts = n.textContent.split(/(\s+)/);
+                const frag = document.createDocumentFragment();
+                parts.forEach((p) => {
+                    if (!p) return;
+                    if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(' ')); return; }
+                    const o = document.createElement('span'); o.className = 'sw';
+                    const inner = document.createElement('span'); inner.className = 'sw__i'; inner.style.setProperty('--i', i++);
+                    inner.textContent = p; o.appendChild(inner); frag.appendChild(o);
+                });
+                node.replaceChild(frag, n);
+            } else if (n.nodeType === 1) walk(n);
+        });
+    })(el);
+    el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+});
+
+/* ---------- Preloader & intro ---------- */
+function ready() {
+    root.classList.add('is-ready');
+    try { sessionStorage.setItem('cardani-intro', '1'); } catch (e) { /* abaikan */ }
+}
+if (reduceMotion || root.classList.contains('no-loader')) {
+    requestAnimationFrame(() => requestAnimationFrame(ready));
+} else {
+    const lb = $('#loaderBar'), lc = $('#loaderCount');
+    const t0 = performance.now(), dur = 1300;
+    (function tick(t) {
+        const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        lb.style.transform = 'scaleX(' + e + ')';
+        lc.textContent = String(Math.round(e * 100)).padStart(3, '0');
+        if (k < 1) requestAnimationFrame(tick); else setTimeout(ready, 180);
+    })(t0);
+}
 
 /* ---------- Reveal saat scroll (dengan stagger) ---------- */
 const revealIO = new IntersectionObserver((entries) => {
@@ -71,20 +108,38 @@ function observeReveal(scope = document) {
     });
 }
 observeReveal();
+$$('.footer__word').forEach((el) => revealIO.observe(el));
+
+/* ---------- Parallax gambar (hanya yang terlihat) ---------- */
+const parallaxEls = new Set();
+const pIO = new IntersectionObserver((entries) => entries.forEach((e) => { e.isIntersecting ? parallaxEls.add(e.target) : parallaxEls.delete(e.target); }));
+if (!reduceMotion) $$('[data-parallax]').forEach((el) => pIO.observe(el));
+function runParallax() {
+    const vh = window.innerHeight;
+    parallaxEls.forEach((img) => {
+        const r = img.parentElement.getBoundingClientRect();
+        const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2); // -1..1
+        img.style.transform = 'translate3d(0,' + (p * -7).toFixed(2) + '%,0)';
+    });
+}
 
 /* ---------- Progress bar, nav, parallax ---------- */
 const nav = $('#nav');
 const bar = $('#progressBar');
-const heroFrame = $('#heroFrame');
 let ticking = false;
+let lastY = window.scrollY;
 function onScroll() {
     const y = window.scrollY;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
     nav.classList.toggle('is-scrolled', y > 8);
-    if (!reduceMotion && heroFrame && y < window.innerHeight * 1.2) {
-        heroFrame.style.transform = 'translate3d(0,' + (y * 0.06).toFixed(1) + 'px,0)';
+    // Nav sembunyi saat scroll turun, muncul lagi saat scroll naik
+    if (!document.getElementById('sheet').classList.contains('is-open')) {
+        if (y > lastY + 6 && y > 480) nav.classList.add('is-hidden');
+        else if (y < lastY - 6 || y < 480) nav.classList.remove('is-hidden');
     }
+    lastY = y;
+    if (!reduceMotion) runParallax();
     ticking = false;
 }
 window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
@@ -140,6 +195,18 @@ document.addEventListener('pointerdown', (e) => {
     btn.appendChild(s);
     setTimeout(() => s.remove(), 650);
 });
+
+/* ---------- Tombol magnetik (desktop) ---------- */
+if (finePointer && !reduceMotion) {
+    $$('[data-magnetic]').forEach((b) => {
+        b.addEventListener('pointermove', (e) => {
+            const r = b.getBoundingClientRect();
+            const x = (e.clientX - r.left - r.width / 2) * 0.22, y = (e.clientY - r.top - r.height / 2) * 0.35;
+            b.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+        });
+        b.addEventListener('pointerleave', () => { b.style.transform = ''; });
+    });
+}
 
 /* ---------- Tilt + sorotan kartu (desktop) ---------- */
 if (finePointer && !reduceMotion) {
@@ -344,7 +411,7 @@ const sel = (id, label, options) => ({ id, label, type: 'select', options });
 const CALCS = [
     {
         key: 'cor', tab: 'Cor Dak', icon: 'i-ruler',
-        title: '📐 Kalkulator Estimasi Cor Dak Beton',
+        title: 'Kalkulator Estimasi Cor Dak Beton',
         desc: 'Hitungan valid material (Rasio 1:2:3) untuk pengecoran plat lantai/jalan.',
         fields: [num('panjang', 'Contoh: 10', 'Panjang (Meter)', 'm'), num('lebar', 'Contoh: 5', 'Lebar (Meter)', 'm'), num('tebal', 'Contoh: 12', 'Tebal Cor (Centimeter)', 'cm', { wide: true })],
         err: ERR_COR,
